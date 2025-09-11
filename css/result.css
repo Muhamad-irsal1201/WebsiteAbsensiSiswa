@@ -1,0 +1,266 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: #2e7d32;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info {
+  font-weight: 500;
+}
+
+.logout-btn {
+  background: #ffffff;
+  color: #388e3c;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Sidebar */
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 60px; /* sesuai tinggi navbar */
+  left: -220px; /* default hidden */
+  width: 220px;
+  max-width: 80%; /* tidak lebih dari 80% layar */
+  height: 100%;
+  background-color: rgba(56, 142, 60, 1); /* full opaque */
+  color: white;
+  padding-top: 20px;
+  transition: left 0.3s, background-color 0.3s ease;
+  z-index: 900;
+}
+
+.sidebar.active {
+  left: 0;
+  background-color: rgba(56, 142, 60, 0.85); /* transparan saat aktif */
+}
+
+.sidebar-logo {
+  text-align: center;      /* pastikan kontainer teks center */
+  margin-bottom: 20px;
+  display: flex;           /* menggunakan flex untuk vertical & horizontal */
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+}
+
+.sidebar-logo img {
+  display: block;
+  width: 60%;         /* mengambil 60% lebar sidebar */
+  max-width: 100px;   /* maksimal 100px */
+  min-width: 60px;    /* minimal 60px agar tidak terlalu kecil */
+  height: auto;       /* menjaga rasio asli */
+  border-radius: 8px; /* opsional rounded corner */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: width 0.3s ease;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .menu li {
+  margin: 10px 0;
+}
+
+.sidebar .menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  transition: background 0.2s, padding 0.2s;
+}
+
+.sidebar .menu li a:hover,
+.sidebar .menu li a.active {
+  background: #2e7d32;
+  font-weight: bold;
+  border-left: 4px solid #fff;
+}
+
+
+/* Dropdown menyesuaikan sidebar */
+.dropdown-menu {
+  background: #2c3e50; /* sesuaikan dengan sidebar */
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 8px 15px;
+}
+
+.dropdown-item:hover {
+  background: #34495e; /* hover efek */
+  color: #fff;
+}
+
+/* Content */
+.content {
+  margin-top: 70px;
+  padding: 20px;
+  margin-left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease;
+}
+
+.content.shifted {
+  margin-right: 220px; /* konten bergeser tanpa mempengaruhi opacity */
+}
+
+/* Container attendance di tengah */
+.attendance-container {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 1000px;  /* Batasi maksimal lebar */
+  margin: 0 auto;     /* Tengah horizontal */
+  box-sizing: border-box;
+  overflow-x: auto;   /* Scroll horizontal jika tabel terlalu lebar */
+  transition: opacity 0.3s ease;
+}
+
+/* Table responsive */
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  min-width: 600px; /* biar tetap nyaman di HP, bisa scroll */
+}
+
+.attendance-table th, 
+.attendance-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.attendance-table th {
+  background: #388e3c;
+  color: white;
+  text-align: left;
+}
+
+.attendance-table td {
+  text-align: center;
+}
+
+/* Tombol di kolom Action */
+.attendance-table td:last-child {
+  text-align: left;
+}
+
+/* Buttons */
+.attendance-table .btn {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 5px;
+  margin: 2px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.attendance-table .btn.hadir { background: #2e7d32; }
+.attendance-table .btn.izin  { background: #ff9800; }
+.attendance-table .btn.sakit { background: #1976d2; }
+.attendance-table .btn.absen { background: #c62828; }
+
+.attendance-table .btn.active {
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+/* Filter form */
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: center; /* Tengah horizontal */
+}
+
+.filter-form label {
+  margin-right: 5px;
+}
+
+.filter-form select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* Responsive untuk device kecil */
+@media (max-width: 768px) {
+  .filter-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filter-form > * {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar { width: 200px; }
+  .sidebar-logo img { max-width: 80px; width: 50%; }
+  .sidebar .menu li a { font-size: 13px; padding: 8px 16px; }
+}
+
+@media (max-width: 768px) {
+  .sidebar { width: 180px; }
+  .sidebar-logo img { max-width: 70px; width: 50%; }
+  .sidebar .menu li a { font-size: 12px; padding: 6px 14px; }
+}
+
+@media (max-width: 480px) {
+  .sidebar { width: 160px; }
+  .sidebar-logo img { max-width: 60px; width: 50%; }
+  .sidebar .menu li a { font-size: 11px; padding: 5px 12px; }
+}
+
+@media (max-width: 1024px) {
+  .sidebar-logo img { width: 55%; max-width: 90px; min-width: 55px; }
+}
+
+@media (max-width: 768px) {
+  .sidebar-logo img { width: 50%; max-width: 80px; min-width: 50px; }
+}
+
+@media (max-width: 480px) {
+  .sidebar-logo img { width: 45%; max-width: 70px; min-width: 45px; }
+}

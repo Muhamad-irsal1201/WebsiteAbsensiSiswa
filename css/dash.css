@@ -1,0 +1,261 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: #2e7d32;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info {
+  font-weight: 500;
+}
+
+.logout-btn {
+  background: #ffffff;
+  color: #388e3c;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  
+}
+
+/* Sidebar */
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 60px; /* sesuai tinggi navbar */
+  left: -220px; /* default hidden */
+  width: 220px;
+  max-width: 80%; /* tidak lebih dari 80% layar */
+  height: 100%;
+  background-color: rgba(56, 142, 60, 1); /* full opaque */
+  color: white;
+  padding-top: 20px;
+  transition: left 0.3s, background-color 0.3s ease;
+  z-index: 900;
+
+}
+
+.sidebar.active {
+  left: 0;
+  background-color: rgba(56, 142, 60, 0.85); /* transparan saat aktif */
+  
+}
+
+.sidebar-logo {
+  text-align: center;      /* pastikan kontainer teks center */
+  margin-bottom: 20px;
+  display: flex;           /* menggunakan flex untuk vertical & horizontal */
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+}
+
+.sidebar-logo img {
+  display: block;
+  width: 60%;         /* mengambil 60% lebar sidebar */
+  max-width: 100px;   /* maksimal 100px */
+  min-width: 60px;    /* minimal 60px agar tidak terlalu kecil */
+  height: auto;       /* menjaga rasio asli */
+  border-radius: 8px; /* opsional rounded corner */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: width 0.3s ease;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .menu li {
+  margin: 10px 0;
+}
+
+.sidebar .menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  transition: background 0.2s, padding 0.2s;
+}
+
+.sidebar .menu li a:hover,
+.sidebar .menu li a.active {
+  background: #2e7d32;
+  font-weight: bold;
+  border-left: 4px solid #fff;
+}
+
+/* Hilangkan styling default Bootstrap dropdown */
+.nav-item .dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 8px 15px;
+  color: #fff; /* sesuaikan warna sidebar kamu */
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  text-align: left;
+}
+
+.nav-item .dropdown-toggle::after {
+  float: right;
+  margin-top: 6px;
+}
+
+/* Dropdown menyesuaikan sidebar */
+.dropdown-menu {
+  background: #2c3e50; /* sesuaikan dengan sidebar */
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 8px 15px;
+}
+
+.dropdown-item:hover {
+  background: #34495e; /* hover efek */
+  color: #fff;
+}
+
+
+/* Section Sejarah Sekolah */
+.school-section {
+  background-color: #f1f1f1; /* abu-abu muda */
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 100px auto 20px auto; /* jarak dari navbar */
+  max-width: 1200px; /* maksimal lebar di desktop */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.school-row {
+  display: flex;
+  flex-wrap: wrap; /* responsive */
+  align-items: center;
+  gap: 30px; /* jarak antar kolom */
+}
+
+.school-col {
+  flex: 1;
+  min-width: 300px; /* agar kolom tidak terlalu sempit */
+}
+
+.image-col img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.text-col h2 {
+  margin-bottom: 20px;
+  color: #2e7d32;
+  font-size: 24px;
+}
+
+.text-col p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #333;
+  font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .school-section {
+    padding: 35px 20px;
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .school-row {
+    flex-direction: column; /* stack column di HP */
+  }
+  .school-section {
+    padding: 25px 15px;
+    margin-top: 80px;
+    max-width: 100%; /* full lebar di HP */
+    border-radius: 0; /* optional supaya full lebar tanpa rounded */
+  }
+  .text-col h2 {
+    font-size: 20px;
+  }
+  .text-col p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .school-section {
+    padding: 20px 10px;
+    margin-top: 70px;
+  }
+  .text-col h2 {
+    font-size: 18px;
+  }
+  .text-col p {
+    font-size: 14px;
+  }
+}
+
+
+
+
+/* Responsive untuk semua device */
+@media (max-width: 1024px) {
+  .sidebar { width: 200px; }
+  .sidebar-logo img { max-width: 80px; width: 50%; }
+  .sidebar .menu li a { font-size: 13px; padding: 8px 16px; }
+}
+
+@media (max-width: 768px) {
+  .sidebar { width: 180px; }
+  .sidebar-logo img { max-width: 70px; width: 50%; }
+  .sidebar .menu li a { font-size: 12px; padding: 6px 14px; }
+}
+
+@media (max-width: 480px) {
+  .sidebar { width: 160px; }
+  .sidebar-logo img { max-width: 60px; width: 50%; }
+  .sidebar .menu li a { font-size: 11px; padding: 5px 12px; }
+}
+
+@media (max-width: 1024px) {
+  .sidebar-logo img { width: 55%; max-width: 90px; min-width: 55px; }
+}
+
+@media (max-width: 768px) {
+  .sidebar-logo img { width: 50%; max-width: 80px; min-width: 50px; }
+}
+
+@media (max-width: 480px) {
+  .sidebar-logo img { width: 45%; max-width: 70px; min-width: 45px; }
+}

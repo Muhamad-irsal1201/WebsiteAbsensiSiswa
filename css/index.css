@@ -1,0 +1,183 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;   /* cegah geser ke kanan */
+  font-family: Arial, sans-serif;
+}
+
+/* Login Section */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f6f9;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+}
+
+/* Kolom Kiri */
+.column.left {
+  flex: 1;
+  min-width: 250px;
+  background: #388e3c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+.column.left .logo {
+  max-width: 120px;
+  width: 100%;
+  margin-bottom: 20px;
+  
+  
+}
+
+.column.left .school-name {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto 15px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)) 
+          drop-shadow(0 0 8px rgba(56, 142, 60, 0.5)); /* efek glow hijau */
+}
+
+h1, h2 {
+      text-shadow: 0 6px 10px rgba(0,0,0,0.2); /* drop shadow */
+}
+
+/* Kolom Kanan */
+.column.right {
+  flex: 1.2;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+   box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1),
+              inset -2px -2px 5px rgba(255,255,255,0.7);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+  display: flex;               /* aktifkan flexbox */
+  align-items: center;         /* sejajarkan icon + teks di tengah vertikal */
+  justify-content: center;     /* posisikan keduanya di tengah button */
+  gap: 8px;                    /* kasih jarak antara icon dan teks */
+}
+
+.login-box button img {
+  width: 20px;    /* sesuaikan ukuran icon */
+  height: 20px;
+}
+
+
+.login-box button:hover {
+  background: #2e7d32;
+}
+
+.login-box p {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .column.left, 
+  .column.right {
+    width: 100%;
+    padding: 30px 15px;
+  }
+
+  .login-box {
+    max-width: 100%;
+  }
+
+  .column.left .school-name {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box input,
+  .login-box button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .column.left .logo {
+    max-width: 90px;
+  }
+
+  .column.left .school-name {
+    font-size: 18px;
+  }
+}

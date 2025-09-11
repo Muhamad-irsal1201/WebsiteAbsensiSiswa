@@ -1,0 +1,89 @@
+/* Container utama form */
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px; /* lebih lega */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  box-sizing: border-box; /* pastikan padding dihitung */
+}
+
+/* Judul */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h2 {
+  color:#2e7d32;
+}
+
+/* Input & Label */
+.form-container label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.form-container input {
+  width: 100%; /* full sesuai container */
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box; /* penting agar rata */
+}
+
+/* Tombol */
+.form-container button,
+.form-container .btn.cancel {
+  display: block;
+  width: 100%; /* ratakan panjang sama dengan input */
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background: #4CAF50;
+  color: white;
+}
+
+.form-container .btn.cancel {
+  background: #6c757d;
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .form-container h2 {
+    font-size: 18px;
+  }
+
+  .form-container input,
+  .form-container button,
+  .form-container .btn.cancel {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
